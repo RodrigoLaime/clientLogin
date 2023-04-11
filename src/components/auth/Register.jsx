@@ -8,7 +8,7 @@ function Register() {
   const [password, setPassword] = useState('');
   const [verifyPass, setVerifyPass] = useState('');
 
-  async function register(e){
+  async function register(e) {
     e.preventDefault();
 
     try {
@@ -18,10 +18,13 @@ function Register() {
         passwordVerify: verifyPass
       }
 
+      /*  await axios.post('https://main--earnest-frangipane-f07978.netlify.app/auth/', registerData, {
+         withCredentials: true,
+       }) */
       await axios.post('http://localhost:5000/auth/', registerData, {
         withCredentials: true,
       })
-      
+
     } catch (error) {
       console.error(error);
     }
