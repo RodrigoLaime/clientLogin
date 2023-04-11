@@ -12,7 +12,7 @@ function AuthContextProvider(props) {
   async function getLoggedIn() {
     /* const loggedInRes = await axios.get('http://localhost:5000/auth/loggedIn'); */
     const loggedInRes = await axios.get('https://main--jolly-cendol-a0529c.netlify.app/auth/loggedIn', {
-      headers: {
+      header: {
         'Access-Control-Allow-Origin': 'https://main--gentle-taffy-cb9058.netlify.app'
       }
     }
