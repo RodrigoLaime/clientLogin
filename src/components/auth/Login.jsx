@@ -24,7 +24,7 @@ function Login() {
         password,
       }
 
-      await axios.post('https://main--earnest-frangipane-f07978.netlify.app/auth/login', loginData);
+      await axios.post('https://main--jolly-cendol-a0529c.netlify.app/auth/login', loginData);
       /*  await axios.post('http://localhost:5000/auth/login', loginData, {
            withCredentials: true,
        }); */

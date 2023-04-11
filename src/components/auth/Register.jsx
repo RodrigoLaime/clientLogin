@@ -21,7 +21,7 @@ function Register() {
       /*  await axios.post('https://main--earnest-frangipane-f07978.netlify.app/auth/', registerData, {
          withCredentials: true,
        }) */
-      await axios.post('https://main--earnest-frangipane-f07978.netlify.app/auth/', registerData, {
+      await axios.post('https://main--jolly-cendol-a0529c.netlify.app/auth/', registerData, {
         withCredentials: true,
       })
       /* await axios.post('http://localhost:5000/auth/', registerData, {
