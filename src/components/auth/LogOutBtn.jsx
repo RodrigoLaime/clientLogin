@@ -4,15 +4,16 @@ import AuthContext from '../../context/AuthContext';
 
 function LogOutBtn() {
 
-    const {getLoggedIn} = useContext(AuthContext);
+  const { getLoggedIn } = useContext(AuthContext);
 
-    async function logOut() {
-        await axios.get('http://localhost:5000/auth/logout');
-       //
-       await getLoggedIn();
-    }
+  async function logOut() {
+    await axios.get('https://main--earnest-frangipane-f07978.netlify.app/auth/logout');
+    /* await axios.get('http://localhost:5000/auth/logout'); */
+    //
+    await getLoggedIn();
+  }
 
-    return <button onClick={logOut}>Log Out</button>
+  return <button onClick={logOut}>Log Out</button>
 };
 
 export default LogOutBtn;

@@ -4,22 +4,23 @@ import CustomerList from './CustomerList'
 import axios from 'axios';
 
 function Customers() {
-      //////obtener de la db
-      const [customers, setCustomers] = useState([]);
+  //////obtener de la db
+  const [customers, setCustomers] = useState([]);
 
-      async function getCustomers(){
-          const customerRes = await axios.get('http://localhost:5000/customer/');
-          // guardamos los valores
-          setCustomers(customerRes.data);
-      }
-      useEffect(() => {
-          getCustomers();
-      },[])
-      
+  async function getCustomers() {
+    const customerRes = await axios.get('https://main--earnest-frangipane-f07978.netlify.app/customer/');
+    /*  const customerRes = await axios.get('http://localhost:5000/customer/'); */
+    // guardamos los valores
+    setCustomers(customerRes.data);
+  }
+  useEffect(() => {
+    getCustomers();
+  }, [])
+
   return (
     <div>
-        <CustomerForm getCustomers={getCustomers}/>
-        <CustomerList customers={customers}/>
+      <CustomerForm getCustomers={getCustomers} />
+      <CustomerList customers={customers} />
     </div>
   )
 }

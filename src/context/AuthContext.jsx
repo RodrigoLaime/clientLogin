@@ -4,27 +4,28 @@ import { createContext, useEffect, useState } from "react";
 
 const AuthContext = createContext();
 
-function AuthContextProvider(props){
+function AuthContextProvider(props) {
 
-    const [loggedIn, setLoggedIn] = useState(undefined);
+  const [loggedIn, setLoggedIn] = useState(undefined);
 
-    //consulta y valida que si esta autorizado o no 
-    async function getLoggedIn() {
-        const loggedInRes = await axios.get('http://localhost:5000/auth/loggedIn');
-        setLoggedIn(loggedInRes.data);
-    }
+  //consulta y valida que si esta autorizado o no 
+  async function getLoggedIn() {
+    /* const loggedInRes = await axios.get('http://localhost:5000/auth/loggedIn'); */
+    const loggedInRes = await axios.get('https://main--earnest-frangipane-f07978.netlify.app/auth/loggedIn');
+    setLoggedIn(loggedInRes.data);
+  }
 
-    //
-    useEffect(() => {
-        getLoggedIn();
-    }, []);
+  //
+  useEffect(() => {
+    getLoggedIn();
+  }, []);
 
-    return(
-        <AuthContext.Provider value={{loggedIn, getLoggedIn}}>
-            {props.children}
-        </AuthContext.Provider>
-    );
+  return (
+    <AuthContext.Provider value={{ loggedIn, getLoggedIn }}>
+      {props.children}
+    </AuthContext.Provider>
+  );
 }
 
 export default AuthContext;
-export {AuthContextProvider};
+export { AuthContextProvider };
