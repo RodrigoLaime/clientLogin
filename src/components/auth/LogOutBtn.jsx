@@ -7,8 +7,8 @@ function LogOutBtn() {
   const { getLoggedIn } = useContext(AuthContext);
 
   async function logOut() {
-    await axios.get('https://main--jolly-cendol-a0529c.netlify.app/auth/logout');
-    /* await axios.get('http://localhost:5000/auth/logout'); */
+    /* await axios.get('https://main--jolly-cendol-a0529c.netlify.app/auth/logout'); */
+    await axios.get('http://localhost:5000/auth/logout');
     //
     await getLoggedIn();
   }

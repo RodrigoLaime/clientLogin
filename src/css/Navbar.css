@@ -1,0 +1,30 @@
+.Navbar {
+  position: absolute;
+  width: 100vw;
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: right;
+  border-bottom: 3px solid #DD00FF;
+}
+
+.Navbar .nav-text {
+  color: #a5a2a2;
+  border-bottom: 3px solid #DD00FF;
+  border-top: 3px solid #dd00ff00;
+  border-left: 3px solid #dd00ff00;
+  border-right: 3px solid #dd00ff00;
+  padding: 10px;
+  text-decoration: none;
+  transition: .5s ease;
+  font-weight: bold;
+}
+
+.Navbar .nav-text:hover {
+  color: #DD00FF;
+  border-radius: 5px;
+  border-top: 3px solid #DD00FF;
+  border-left: 3px solid #DD00FF;
+  border-right: 3px solid #DD00FF;
+}

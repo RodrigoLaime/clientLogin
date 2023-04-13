@@ -8,8 +8,8 @@ function Customers() {
   const [customers, setCustomers] = useState([]);
 
   async function getCustomers() {
-    const customerRes = await axios.get('https://main--jolly-cendol-a0529c.netlify.app/customer/');
-    /*  const customerRes = await axios.get('http://localhost:5000/customer/'); */
+    /*     const customerRes = await axios.get('https://main--jolly-cendol-a0529c.netlify.app/customer/'); */
+    const customerRes = await axios.get('http://localhost:5000/customer/');
     // guardamos los valores
     setCustomers(customerRes.data);
   }

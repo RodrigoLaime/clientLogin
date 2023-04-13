@@ -10,9 +10,9 @@ function AuthContextProvider(props) {
 
   //consulta y valida que si esta autorizado o no 
   async function getLoggedIn() {
-    /* const loggedInRes = await axios.get('http://localhost:5000/auth/loggedIn'); */
-    const loggedInRes = await axios.get('https://main--jolly-cendol-a0529c.netlify.app/auth/loggedIn', { withCredentials: true });
-    // 'Access-Control-Allow-Origin': 'https://main--gentle-taffy-cb9058.netlify.app'
+    const loggedInRes = await axios.get('http://localhost:5000/auth/loggedIn');
+    /*   const loggedInRes = await axios.get('https://main--jolly-cendol-a0529c.netlify.app/auth/loggedIn', { withCredentials: true }); */
+    //nouu 'Access-Control-Allow-Origin': 'https://main--gentle-taffy-cb9058.netlify.app'
 
     setLoggedIn(loggedInRes.data);
   }

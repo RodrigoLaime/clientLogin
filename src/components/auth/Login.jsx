@@ -2,7 +2,8 @@ import React, { useContext } from 'react'
 import { useState } from "react"
 import axios from 'axios';
 import AuthContext from '../../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import '../../css/Login.css'
 
 function Login() {
 
@@ -24,10 +25,10 @@ function Login() {
         password,
       }
 
-      await axios.post('https://main--jolly-cendol-a0529c.netlify.app/auth/login', loginData);
-      /*  await axios.post('http://localhost:5000/auth/login', loginData, {
-           withCredentials: true,
-       }); */
+      /* await axios.post('https://main--jolly-cendol-a0529c.netlify.app/auth/login', loginData); */
+      await axios.post('http://localhost:5000/auth/login', loginData, {
+        withCredentials: true,
+      });
       //verifica si esta logueado y dirreciona a la ruta 
       await getLoggedIn();
       //y lo redireccionamos al customer
@@ -39,23 +40,36 @@ function Login() {
   }
 
   return (
-    <div>
-      <h1>Log in to your account</h1>
-      <form action="" onSubmit={login}>
-        <input
-          type="email"
-          id="email"
-          placeholder='Email'
-          onChange={(e) => setEmail(e.target.value)}
-          value={email} />
-        <input
-          type="password"
-          id="password"
-          placeholder='Password'
-          onChange={(e) => setPassword(e.target.value)}
-          value={password} />
-        <button type='submit'>Log In</button>
-      </form>
+    <div className='LOGIN'>
+      <div className='Login'>
+        <h1>Log in to your account</h1>
+        <div className='container-form'>
+          <form onSubmit={login}>
+            <div className='input-email'>
+              <label htmlFor="email">Email</label>
+              <input className='email'
+                type="email"
+                id="email"
+                placeholder='Email'
+                onChange={(e) => setEmail(e.target.value)}
+                value={email} />
+            </div>
+            <div className='input-password'>
+              <label htmlFor="password">Password</label>
+              <input className='password'
+                type="password"
+                id="password"
+                placeholder='Password'
+                onChange={(e) => setPassword(e.target.value)}
+                value={password} />
+            </div>
+            <button type='submit'>Log In</button>
+          </form>
+        </div>
+        <div>
+          <p>New Here? <Link to='/register'>Create an account</Link></p>
+        </div>
+      </div>
     </div>
   )
 }

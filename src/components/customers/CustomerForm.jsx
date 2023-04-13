@@ -14,8 +14,8 @@ function CustomerForm({ getCustomers }) {
         name: customerName
       }
       //enviamos el valor
-      await axios.post('https://main--jolly-cendol-a0529c.netlify.app/customer/', customerData);
-      /*          await axios.post('http://localhost:5000/customer/', customerData); */
+      /* await axios.post('https://main--jolly-cendol-a0529c.netlify.app/customer/', customerData); */
+               await axios.post('http://localhost:5000/customer/', customerData);
       //para llamar a la funcion de get para actualizar la lista una ves añadido un name
       getCustomers()
     } catch (error) {

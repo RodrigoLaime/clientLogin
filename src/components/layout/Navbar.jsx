@@ -3,23 +3,24 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import AuthContext from '../../context/AuthContext';
 import LogOutBtn from '../auth/LogOutBtn';
+import '../../css/Navbar.css'
 
 function Navbar() {
   const { loggedIn } = useContext(AuthContext);
 
   return (
-    <div>
-      <Link to="/">Home</Link>
+    <div className='Navbar'>
+      <Link className='home-nav nav-text' to="/">Home</Link>
       {loggedIn === false && (
         <>
-          <Link to="/register">Register</Link>
-          <Link to="/login">Log In</Link>
+          <Link className='register-nav nav-text' to="/register">Register</Link>
+          <Link className='ligin-nav nav-text' to="/login">Log In</Link>
         </>
       )}
       {loggedIn === true &&
         <>
-          <Link to="/customer">Customer</Link>
-          <LogOutBtn />
+          <Link className='customer-nav nav-text' to="/customer">Customer</Link>
+          <LogOutBtn className='logout-nav nav-text' />
         </>
       }
     </div>
