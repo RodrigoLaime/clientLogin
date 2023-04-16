@@ -26,15 +26,12 @@ function Register() {
       setErrors(Validation(registerData));
 
       if (errors.email === "" && errors.password === "" && errors.verifyPass) {
-        /*nouu  await axios.post('https://main--earnest-frangipane-f07978.netlify.app/auth/', registerData, {
-         withCredentials: true,
-       }) */
-        /* await axios.post('https://main--jolly-cendol-a0529c.netlify.app/auth/', registerData, {
-          withCredentials: true,
-        }) */
-        await axios.post('http://localhost:5000/auth/', registerData, {
+        await axios.post('https://loginmongoserver1.onrender.com/auth/', registerData, {
           withCredentials: true,
         })
+       /*  await axios.post('http://localhost:5000/auth/', registerData, {
+          withCredentials: true,
+        }) */
       }
 
     } catch (error) {
