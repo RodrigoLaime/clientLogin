@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import axios from 'axios';
 import AuthContext from '../../context/AuthContext';
+import { Link } from 'react-router-dom';
 
 function LogOutBtn() {
 
@@ -13,7 +14,7 @@ function LogOutBtn() {
     await getLoggedIn();
   }
 
-  return <button onClick={logOut}>Log Out</button>
+  return <Link to={'/'} className='logout-nav nav-text' onClick={logOut}>Log Out</Link>
 };
 
 export default LogOutBtn;

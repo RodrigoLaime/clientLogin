@@ -4,25 +4,31 @@
   box-sizing: border-box;
 }
 
-.LOGIN {
+.LOGIN, .REGISTER {
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
 }
 
-.Login {
-  background-color: white;
+.Login, .Register {
+  background-image: url('https://cpwebassets.codepen.io/assets/profile/profile-bg-7e5b92551f68bb55b638847ab4b3ced093fa6d3727e02083fdade22a2d4b07e2.svg');
+  background-position: left;
+  background-size: cover;
+  background-repeat: no-repeat;
   text-align: center;
   width: 400px;
   margin: 0 auto;
   padding: 40px;
   border-radius: 15px;
+  margin-top: 190px;
+  margin-bottom: 50px;
 }
 
-.Login h1 {
-  color: #a5a2a2;
+.Login,.Register h1 {
+  color: #717790;
   font-weight: bold;
 }
 
@@ -40,21 +46,28 @@
 .container-form div label {
   padding: 13px 0;
   font-size: 16px;
-  color: #a5a2a2;
+  color: #717790;
+  font-weight: bold;
 }
 
 .container-form div input {
   outline: none;
   padding: 13px 10px;
   border-radius: 10px;
-  border: 3px solid #efefef;
+  border: 3px solid #717790;
   font-size: 16px;
   transition: .3s ease;
+  background-color: #252830;
+  color: #ffffff;
+  font-weight: bold;
 }
 
-/* #330055 #DD00FF */
 .container-form div input:focus {
-  border: 3px solid #DD00FF;
+  border: 3px solid #5a5f73;
+  background-color: #363a46;
+}
+.container-form div input::placeholder {
+  color: #717790;
 }
 
 /* .container-form .input-email {
@@ -68,3 +81,23 @@
 .container-form .input-password {
   background-color: rgb(70, 28, 25);
 } */
+.container-form form .btn-login, .btn-register{
+  background-color: #47cf73;
+  border: none;
+  margin-top: 40px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-family: 'Comfortaa', cursive;
+}
+
+.question-text{
+  font-weight: bold;
+  color: #717790;
+}
+.question-text .register-link, .login-link{
+  color: white;
+}

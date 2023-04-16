@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Navbar from '../components/layout/Navbar.jsx';
 import Home from '../components/layout/Home.jsx';
+import HomeUser from '../components/layout/HomeUser.jsx';
 import Register from '../components/auth/Register.jsx';
 import Login from '../components/auth/Login.jsx';
 /* import Customer from '../components/layout/Customer.jsx'; */
@@ -27,6 +28,7 @@ function Rutas() {
                 }
                 {loggedIn === true &&
                     <>
+                        <Route path="/homeuser" element={<HomeUser />} />
                         <Route path="/customer" element={<Customer />} />
                     </>
                 }

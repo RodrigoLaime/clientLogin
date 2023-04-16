@@ -4,10 +4,13 @@ import axios from 'axios';
 import AuthContext from '../../context/AuthContext';
 import { useNavigate, Link } from 'react-router-dom';
 import '../../css/Login.css'
+import Validation from './Login';
 
 function Login() {
 
   const navigate = useNavigate();
+
+  const [errors, setErrors] = useState({});
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -25,15 +28,19 @@ function Login() {
         password,
       }
 
-      /* await axios.post('https://main--jolly-cendol-a0529c.netlify.app/auth/login', loginData); */
-      await axios.post('http://localhost:5000/auth/login', loginData, {
+      setErrors(Validation(loginData));
+
+     if(errors.email === "" && errors.password === ""){
+       /* await axios.post('https://main--jolly-cendol-a0529c.netlify.app/auth/login', loginData); */
+       await axios.post('http://localhost:5000/auth/login', loginData, {
         withCredentials: true,
       });
-      //verifica si esta logueado y dirreciona a la ruta 
+      //verifica si esta logueado 
       await getLoggedIn();
       //y lo redireccionamos al customer
       navigate('/customer')
 
+     }
     } catch (error) {
       console.error(error);
     }
@@ -63,11 +70,11 @@ function Login() {
                 onChange={(e) => setPassword(e.target.value)}
                 value={password} />
             </div>
-            <button type='submit'>Log In</button>
+            <button className='btn-login' type='submit'>Log In</button>
           </form>
         </div>
-        <div>
-          <p>New Here? <Link to='/register'>Create an account</Link></p>
+        <div className='question-text'>
+          <p>New Here? <Link className='register-link' to='/register'>Create an account</Link></p>
         </div>
       </div>
     </div>
