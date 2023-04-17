@@ -10,8 +10,8 @@ function AuthContextProvider(props) {
 
   //consulta y valida que si esta autorizado o no 
   async function getLoggedIn() {
-    const loggedInRes = await axios.get('https://loginmongoserver1.onrender.com/auth/loggedIn');
-/*     const loggedInRes = await axios.get('http://localhost:5000/auth/loggedIn'); */
+     const loggedInRes = await axios.get('https://loginmongoserver1.onrender.com/auth/loggedIn');
+    /* const loggedInRes = await axios.get('http://localhost:5000/auth/loggedIn'); */
 
     setLoggedIn(loggedInRes.data);
   }

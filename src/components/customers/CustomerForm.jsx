@@ -15,7 +15,7 @@ function CustomerForm({ getCustomers }) {
       }
       //enviamos el valor
       await axios.post('https://loginmongoserver1.onrender.com/customer/', customerData);
-      /* await axios.post('http://localhost:5000/customer/', customerData); */
+     /*  await axios.post('http://localhost:5000/customer/', customerData); */
       //para llamar a la funcion de get para actualizar la lista una ves añadido un name
       getCustomers()
     } catch (error) {
@@ -24,7 +24,7 @@ function CustomerForm({ getCustomers }) {
   }
 
   return (
-    <form onSubmit={saveCustomer}>
+    <form className='customer-form' onSubmit={saveCustomer}>
       <input
         type="text"
         placeholder='Customer name'
@@ -32,7 +32,7 @@ function CustomerForm({ getCustomers }) {
           setCustomerName(e.target.value)
         }}
         value={customerName} />
-      <button type='submit'>Save new customer</button>
+      <button type='submit'>SAVE</button>
     </form>
   )
 }

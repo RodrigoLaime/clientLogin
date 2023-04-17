@@ -1,14 +1,15 @@
 import React from 'react'
+import '../../css/Customer.css'
 
 function CustomerList({ customers }) {
     function renderCustomers() {
         return customers.map((customer, i) => {
-            return <li key={i}>{customer.name}</li>
+            return <li className='customer-li' key={i}>{customer.name}</li>
         })
     }
 
     return (
-        <div>
+        <div className='customer-list'>
             <ul>
               {/*   {customers?.map((e) => (
                     <li key={e._id}>{e.name}</li>

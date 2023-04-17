@@ -1,0 +1,58 @@
+.Customer{
+    width: 100vw;
+    height: auto;
+    padding-top: 160px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+.container-customer h1{
+    margin: 20px 0;
+}
+.container-customer{
+    width: 400px;
+    padding: 20px;
+/*     background-color: seagreen; */
+    border-radius: 10px;
+    border: 3px solid #717790;
+}
+.container-customer .customer-form{
+    padding: 20px 0;
+    width: 100%;
+}
+.container-customer .customer-form input{
+    background-color: rgba(2, 2, 2, 0);
+    outline: none;
+    padding: 8px;
+    border-radius: 5px;
+    width: 55%;
+    margin-right: 10px;
+    color: white;
+    border: 2px solid #47cf73;
+}
+.container-customer .customer-form button{
+    outline: none;
+    padding: 8px;
+    border-radius: 5px;
+    width: 35%;
+    background-color: #47cf73;
+    border: none;
+}
+
+/*  */
+.container-customer .customer-list{
+    list-style: none;
+    margin-top: 20px;
+    overflow-x: hidden;
+}
+.container-customer .customer-list ul{
+    list-style: none;
+    text-align: left;
+}
+.container-customer .customer-list ul li{
+    padding: 10px;
+    border: 2px solid #717790;
+    margin: 10px;
+    border-radius: 5px;
+}
